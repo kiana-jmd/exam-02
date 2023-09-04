@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div class="container px-2 flex h-screen justify-center items-center">
+      <form class="w-2/3 mb-3">
+        <div class="flex justify-center mb-7">
+         <img class="w-20 h-20 p-1 rounded-full ring-2 ring-pink-300 dark:ring-pink-500" src="./High-value-woman_-Attractive-brunette-girl-in-yellow-top-smiling-.jpg" alt="Bordered avatar">
+        </div>
+            <div class="mb-6">
+              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Cantact Name</label>
+              <input type="text" id="Contact-Name" class="bg-pink-100 border border-pink-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="mb-6">
+              <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Cantact Number</label>
+              <input type="number" id="Contact-Number" class="bg-pink-100 border border-pink-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div  class="flex flex-wrap justify-between gap-6 mb-6">
+              <div class="flex items-center mr-4">
+                <input id="SIM" type="radio" value="" name="colored-radio" class="w-4 h-4 text-pink-600 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="pink-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">SIM</label>
+              </div>
+              <div class="flex items-center mr-4">
+                <input id="Device" type="radio" value="" name="colored-radio" class="w-4 h-4 text-pink-600 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="pink-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Device</label>
+              </div>
+            </div>
+            <div class="flex gap-3 items-center justify-center">
+                <button id="Add-Contact" type="button" class="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800">Add To Cantact</button>
+                <button id="Contacts-List" type="button" class="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-blue-800">Cantact List</button>
+            </div>
+          </form>
+    </div>
+
+    
+    
+<div id="contactsListDrawer" class="fixed transition-all bottom-[-100%] left-0 right-0 z-40 w-full p-4 overflow-y-auto  bg-white dark:bg-gray-800 transform-none" tabindex="-1" aria-labelledby="drawer-bottom-label">
+   <h5 id="drawer-bottom-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg class="w-4 h-4 mr-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+ </svg>Contacts List</h5>
+   <button type="button" id="closeDrawerButton" data-drawer-hide="drawer-bottom-example" aria-controls="drawer-bottom-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
+     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+     </svg>
+     <span class="sr-only">Close menu</span>
+    </button>
+    <ul id="contacts-List" class="flex flex-col list-none">
+    </ul>
+   
+</div>
+
+
+    <script type="module" src="./dist/index.js"></script>
+</body>
+</html>
