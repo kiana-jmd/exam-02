@@ -11,4 +11,4 @@ submitButton?.addEventListener("click" , handelCreatContac);
 
 showContactButton?.addEventListener("click", showContactsButtonHandler)
 
-closeDrawerButton?.addEventListener("click", () => closeContactDrawerHandler)
+closeDrawerButton?.addEventListener("click", closeContactDrawerHandler)
