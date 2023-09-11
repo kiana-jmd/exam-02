@@ -16,8 +16,15 @@ import {
     deviceInput ,
     contactsListElement
  } from "./importer.js";
-import { ContactProps } from "./types.js";
+import { ContactInfoType, ContactProps } from "./types.js";
 import { contactsList } from "./state.js";
+import { creatListItem, validateFields } from "./function.js";
+
+const validateCreateContact = (contactInfo: ContactInfoType) => {
+    if(!validateFields(contactInfo.contactName , contactInfo.phoneNumber + ""))
+     alert("fill all fields")
+     throw Error("fill all fields")
+}
 
 export const handelCreatContac = () => {
     const newContact : ContactProps = {
@@ -27,20 +34,17 @@ export const handelCreatContac = () => {
         storage : deviceInput?.checked ? "Device" : "SIM",
         avatar : null,
     };
+
+    validateCreateContact({
+        contactName : contactNameInput!.value,
+        phoneNumber : contactNumberInput!.value
+    })
+
     contactsList.push(newContact);
 
-    const listItem = document.createElement("li");
-    listItem.className = "py-4 px-1 bg-slate-100 rounded-lg" ;
-    const contactNameElement = document.createElement("h2");
-    contactNameElement.innerText = newContact.contactName;
-    contactNameElement.className = "text-slate-700" ;
-    const contactNumberElement = document.createElement("p");
-    contactNumberElement.innerText = newContact.contactNumber.toString() ;
-    contactNumberElement.className = "text-slate-500" ;
-
-    listItem.appendChild(contactNameElement)
-    listItem.appendChild(contactNumberElement)
-
-    contactsListElement?.appendChild(listItem)
-
-}
+ const listItem = creatListItem({
+        contactName: newContact.contactName,
+        phoneNumber: newContact.contactNumber,
+    }) 
+    contactsListElement?.appendChild(listItem);
+ }
